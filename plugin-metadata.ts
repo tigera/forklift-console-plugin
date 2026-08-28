@@ -10,7 +10,7 @@ import pkg from './package.json';
 
 const pluginMetadata: ConsolePluginBuildMetadata = {
   dependencies: {
-    '@console/pluginAPI': '*',
+    '@console/pluginAPI': '>=4.22.0-0',
   },
   description:
     'Forklift is a suite of migration tools that facilitate the migration of VM workloads to KubeVirt.',
