@@ -14,7 +14,9 @@ echo ""
 echo "Build plugin image"
 echo "=================="
 
-podman build --ulimit nofile=8192 --tag ${FORKLIFT_PLUGIN_IMAGE} -f build/Containerfile .
+podman build --pull --ulimit nofile=8192 \
+  --build-arg BUILD_DATE="$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+  --tag ${FORKLIFT_PLUGIN_IMAGE} -f build/Containerfile .
 
 echo ""
 echo "Push plugin image"
